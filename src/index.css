@@ -178,12 +178,25 @@ body {
   background: var(--orange);
   text-transform: uppercase;
   transition: filter 0.15s ease;
+
+  /* Responsive sizing */
+  width: clamp(120px, 25vw, 180px); /* min 120px, scales, max 200px */
+  max-width: 100%; /* never exceed container */
 }
+
 .btn:hover {
   filter: brightness(1.08);
 }
+
 .btn:active {
   filter: brightness(0.96);
+}
+
+/* Stack with full-width button on small screens */
+@media (max-width: 480px) {
+  .btn {
+    width: min(90vw, 320px); /* full but safe */
+  }
 }
 
 /* Fine print + Footer */
