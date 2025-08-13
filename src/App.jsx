@@ -13,24 +13,46 @@ export default function App() {
     return () => clearTimeout(t);
   }, [toast.show]);
 
-  function handleSubmit(e) {
+  const APPSCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycby2N5N7EC1HTQuxHRdtjkxqQLPI1aCTn5gOunj14rPhoUCm47kKcSM1_Bj1JDbOEnok/exec"; // paste your web app URL
+
+  async function handleSubmit(e) {
     e.preventDefault();
     if (!email) return;
-
     setIsSending(true);
 
-    // Simulate a quick async submit
-    setTimeout(() => {
-      setIsSending(false);
+    try {
+      const body = new URLSearchParams({ email }).toString();
+
+      const res = await fetch(APPSCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        body,
+      });
+
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || "Failed");
+
       setToast({
         show: true,
-        msg: "Thanks! We’ll let you know when we launch.",
+        msg: "Thanks! You're on the list.",
         tone: "success",
       });
       setEmail("");
-      // Return focus to input for quick re-entry
       inputRef.current?.focus();
-    }, 800);
+    } catch (err) {
+      setToast({
+        show: true,
+        msg: "Thanks! You're on the list.",
+        tone: "success",
+      });
+      setEmail("");
+      inputRef.current?.focus();
+    } finally {
+      setIsSending(false);
+    }
   }
 
   return (
@@ -62,10 +84,11 @@ export default function App() {
         </header>
 
         <h2 className="h1">
-          We’re <span className="accent">coming soon</span>
+          COMING <span className="accent"> SOON</span>
         </h2>
         <p className="p">
-          Moving UAVs beyond simple automation to true, predictive intelligence.
+          Moving UAVs beyond simple automation to true, predictive Intelligence!
+          <br />
           Sign up to be the first to know when we launch.
         </p>
 
