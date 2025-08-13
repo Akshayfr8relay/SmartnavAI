@@ -30,6 +30,7 @@ body {
   position: relative;
   overflow: hidden;
   padding: 24px;
+  text-align: center;
 }
 .cn-ring {
   position: absolute;
@@ -61,6 +62,7 @@ body {
   padding: 32px;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 80px rgba(243, 112, 33, 0.12);
+  align-items: center; /* center children horizontally */
 }
 
 /* Brand */

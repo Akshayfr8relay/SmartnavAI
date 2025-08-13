@@ -118,6 +118,7 @@ export default function App() {
         <div className="fine">
           By subscribing, you agree to receive updates from SMARTNAV.AI.
         </div>
+        <br />
 
         <footer className="footer">
           <img
