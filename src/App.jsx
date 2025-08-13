@@ -65,8 +65,8 @@ export default function App() {
           We’re <span className="accent">coming soon</span>
         </h2>
         <p className="p">
-          Moving UAVs beyond simple automation to true, predictive
-          intelligence.. Sign up to be the first to know when we launch.
+          Moving UAVs beyond simple automation to true, predictive intelligence.
+          Sign up to be the first to know when we launch.
         </p>
 
         <form className="form" onSubmit={handleSubmit} noValidate>
