@@ -87,7 +87,7 @@ export default function App() {
           COMING <span className="accent"> SOON</span>
         </h2>
         <p className="p">
-          Moving UAVs beyond simple automation to true, predictive Intelligence!
+          Moving UAVs beyond simple automation to true, Predictive Intelligence!
           <br />
           Sign up to be the first to know when we launch.
         </p>
@@ -95,7 +95,7 @@ export default function App() {
         <form className="form" onSubmit={handleSubmit} noValidate>
           <input
             ref={inputRef}
-            className="input"
+            className="input input--narrow"
             type="email"
             placeholder="you@company.com"
             value={email}

@@ -59,7 +59,7 @@ body {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  padding: 32px;
+  padding: 52px;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 80px rgba(243, 112, 33, 0.12);
   align-items: center; /* center children horizontally */
@@ -69,11 +69,13 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   margin-bottom: 20px;
+  text-align: center;
+  justify-content: center; /* centers horizontally */
 }
 .brand__logo {
-  height: 48px;
+  height: 58px;
   width: auto;
   display: block;
 }
@@ -116,17 +118,21 @@ body {
 @media (min-width: 600px) {
   .form {
     flex-direction: row;
+    justify-content: center;
   }
 }
 .input {
-  flex: 1;
-  min-width: 220px;
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--white);
-  padding: 12px 14px;
+  padding: 14px 16px;
   border-radius: 12px;
   outline: none;
+  width: clamp(250px, 40vw, 320px); /* narrower */
+}
+
+.input--narrow {
+  width: clamp(250px, 40vw, 320px); /* min 200px, max 320px */
 }
 .input::placeholder {
   color: rgba(255, 255, 255, 0.55);
@@ -170,6 +176,7 @@ body {
   gap: 10px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
+  justify-content: center; /* centers horizontally */
 }
 .footer__mark {
   height: 20px;
