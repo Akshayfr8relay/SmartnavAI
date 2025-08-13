@@ -121,6 +121,7 @@ body {
     justify-content: center;
   }
 }
+/* Base input */
 .input {
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -128,18 +129,40 @@ body {
   padding: 14px 16px;
   border-radius: 12px;
   outline: none;
-  width: clamp(350px, 40vw, 320px); /* narrower */
+
+  /* min 200px, fluid 60vw, max 420px */
+  width: clamp(200px, 60vw, 420px);
+  max-width: 100%; /* never exceed container */
 }
 
 .input--narrow {
-  width: clamp(350px, 40vw, 320px); /* min 200px, max 320px */
+  /* slightly smaller cap for the narrow variant */
+  width: clamp(180px, 55vw, 360px);
+  max-width: 100%;
 }
+
 .input::placeholder {
   color: rgba(255, 255, 255, 0.55);
 }
 .input:focus {
   border-color: var(--orange);
   box-shadow: 0 0 0 6px rgba(243, 112, 33, 0.25);
+}
+
+/* Optional: tighten layout on extra-small screens */
+@media (max-width: 480px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn {
+    width: min(90vw, 360px);
+  }
+  .input,
+  .input--narrow {
+    width: min(90vw, 360px); /* hard cap to viewport */
+  }
 }
 
 .btn {
