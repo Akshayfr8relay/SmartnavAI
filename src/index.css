@@ -128,11 +128,11 @@ body {
   padding: 14px 16px;
   border-radius: 12px;
   outline: none;
-  width: clamp(250px, 40vw, 320px); /* narrower */
+  width: clamp(350px, 40vw, 320px); /* narrower */
 }
 
 .input--narrow {
-  width: clamp(250px, 40vw, 320px); /* min 200px, max 320px */
+  width: clamp(350px, 40vw, 320px); /* min 200px, max 320px */
 }
 .input::placeholder {
   color: rgba(255, 255, 255, 0.55);
