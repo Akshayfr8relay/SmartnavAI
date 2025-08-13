@@ -87,7 +87,8 @@ export default function App() {
           COMING <span className="accent"> SOON</span>
         </h2>
         <p className="p">
-          Moving UAVs beyond simple automation to true, Predictive Intelligence!
+          Moving UAVs beyond simple automation to true, Predictive &nbsp;
+          Intelligence!
           <br />
           Sign up to be the first to know when we launch.
         </p>
